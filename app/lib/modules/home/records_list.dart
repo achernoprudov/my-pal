@@ -10,7 +10,7 @@ class RecordsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           title: Text('Mood at $index index'),
-          leading: Text('😶'),
+          leading: const Text('😶'),
         );
       },
     );
