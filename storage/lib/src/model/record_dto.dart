@@ -1,11 +1,18 @@
-class RecordDto {
-  final int id;
-  final int dateMills;
-  final String mood;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  RecordDto({
-    required this.id,
-    required this.dateMills,
-    required this.mood,
-  });
+part 'record_dto.freezed.dart';
+
+part 'record_dto.g.dart';
+
+@freezed
+class RecordDto with _$RecordDto {
+  const factory RecordDto({
+    int? id,
+    required int date,
+    required String mood,
+    @Default('') String text,
+  }) = _RecordDto;
+
+  factory RecordDto.fromJson(Map<String, dynamic> json) =>
+      _$RecordDtoFromJson(json);
 }

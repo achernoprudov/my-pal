@@ -2,11 +2,11 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:storage/src/database/database_scripts.dart';
 
-class AppDatabase {
-  late Database _database;
+class DatabaseStack {
+  late Database db;
 
   void initialize() async {
-    _database = await openDatabase(
+    db = await openDatabase(
       join(await getDatabasesPath(), 'my_pal_database.db'),
       version: 1,
       onCreate: (db, version) {
