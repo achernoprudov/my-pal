@@ -1,8 +1,8 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:storage/storage.dart';
 
 class RecordsList extends StatelessWidget {
-  final List<RecordDto> records;
+  final List<Record> records;
 
   const RecordsList({Key? key, required this.records}) : super(key: key);
 
@@ -14,6 +14,7 @@ class RecordsList extends StatelessWidget {
         final record = records[index];
         return ListTile(
           title: Text('Mood at $index index: ${record.mood}, id = ${record.id}'),
+          subtitle: Text('Date ${record.date}'),
           leading: const Text('😶'),
         );
       },

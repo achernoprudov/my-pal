@@ -12,7 +12,7 @@ class RecordMapperImpl implements RecordMapper {
   Record toRecord(RecordDto dto) {
     return Record(
       id: ArgumentError.checkNotNull(dto.id),
-      date: DateTime.fromMicrosecondsSinceEpoch(dto.date),
+      date: DateTime.fromMillisecondsSinceEpoch(dto.date),
       mood: dto.mood,
     );
   }

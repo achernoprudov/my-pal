@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  core:
+    path: ../core
   di:
     path: ../di
   domain:

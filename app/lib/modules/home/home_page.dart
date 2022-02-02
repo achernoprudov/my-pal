@@ -1,4 +1,6 @@
+import 'package:core/core.dart';
 import 'package:di/di.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:storage/storage.dart';
 
@@ -14,15 +16,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late RecordsDao recordsDao;
+  late GetRecordsUseCase getRecordsUseCase;
+  late AddRecordUseCase addRecordUseCase;
 
-  List<RecordDto> records = [];
+  List<Record> records = [];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    recordsDao = ServiceLocator.get<RecordsDao>();
+    getRecordsUseCase = ServiceLocator.get<GetRecordsUseCase>();
+    addRecordUseCase = ServiceLocator.get<AddRecordUseCase>();
 
     _updateRecords();
   }
@@ -43,13 +47,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _addNewRecord() async {
-    const record = RecordDto(mood: 'good', date: 1);
-    await recordsDao.insert(record);
+    await addRecordUseCase.addRecord(date: DateTime.now(), mood: 'ok');
     _updateRecords();
   }
 
   Future<void> _updateRecords() async {
-    final records = await recordsDao.records();
+    final records = await getRecordsUseCase.getRecords();
     setState(() {
       this.records = records;
     });
