@@ -22,7 +22,7 @@ class RecordsDao extends DatabaseDao {
   }
 
   Future<List<RecordDto>> records() async {
-    List<dynamic> list = await db.rawQuery('SELECT * FROM records');
+    List<dynamic> list = await db.rawQuery('SELECT * FROM records ORDER BY date DESC');
     return list.map((raw) => RecordDto.fromJson(raw)).toList();
   }
 }
