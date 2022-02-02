@@ -20,4 +20,9 @@ class RecordsDao extends DatabaseDao {
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
+
+  Future<List<RecordDto>> records() async {
+    List<dynamic> list = await db.rawQuery('SELECT * FROM records');
+    return list.map((raw) => RecordDto.fromJson(raw)).toList();
+  }
 }

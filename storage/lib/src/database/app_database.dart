@@ -5,7 +5,7 @@ import 'package:storage/src/database/database_scripts.dart';
 class DatabaseStack {
   late Database db;
 
-  void initialize() async {
+  Future<void> initialize() async {
     db = await openDatabase(
       join(await getDatabasesPath(), 'my_pal_database.db'),
       version: 1,
