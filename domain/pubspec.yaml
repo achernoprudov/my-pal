@@ -9,6 +9,8 @@ environment:
 dependencies:
   core:
     path: ../core
+  di:
+    path: ../di
   storage:
     path: ../storage
 

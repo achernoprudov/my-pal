@@ -6,6 +6,8 @@ abstract class RecordMapper {
 }
 
 class RecordMapperImpl implements RecordMapper {
+  const RecordMapperImpl();
+
   @override
   Record toRecord(RecordDto dto) {
     return Record(
