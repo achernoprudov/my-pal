@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:my_pal/modules/home/records_list.dart';
+import 'package:storage/storage.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+import 'records_list.dart';
+
+class HomePage extends StatefulWidget {
+  final RecordsDao dao;
+
+  const HomePage({
+    Key? key,
+    required this.dao,
+  }) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<RecordDto> records = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _updateRecords();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +31,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Records list'),
       ),
-      body: const RecordsList(),
+      body: RecordsList(records: records),
       floatingActionButton: FloatingActionButton(
         onPressed: _addNewRecord,
         tooltip: 'Add record',
@@ -19,5 +40,16 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  void _addNewRecord() {}
+  void _addNewRecord() async {
+    const record = RecordDto(mood: 'good', date: 1);
+    await widget.dao.insert(record);
+    _updateRecords();
+  }
+
+  Future<void> _updateRecords() async {
+    final records = await widget.dao.records();
+    setState(() {
+      this.records = records;
+    });
+  }
 }
