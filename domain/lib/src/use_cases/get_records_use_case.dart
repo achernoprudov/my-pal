@@ -3,6 +3,7 @@ import 'package:domain/src/mapper/record_mapper.dart';
 import 'package:storage/storage.dart';
 
 abstract class GetRecordsUseCase {
+  // TODO add pagination
   Future<List<Record>> getRecords();
 }
 
