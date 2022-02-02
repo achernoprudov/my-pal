@@ -1,0 +1,16 @@
+name: domain
+description: Domain module.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  core:
+    path: ../core
+  storage:
+    path: ../storage
+
+dev_dependencies:
+  lints: ^1.0.0

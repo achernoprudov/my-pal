@@ -1,3 +1,3 @@
 library core;
 
-// export '';
+export 'src/model/record.dart';
