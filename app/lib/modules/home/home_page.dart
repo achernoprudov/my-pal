@@ -1,14 +1,12 @@
+import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:storage/storage.dart';
 
 import 'records_list.dart';
 
 class HomePage extends StatefulWidget {
-  final RecordsDao dao;
-
   const HomePage({
     Key? key,
-    required this.dao,
   }) : super(key: key);
 
   @override
@@ -16,12 +14,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late RecordsDao recordsDao;
+
   List<RecordDto> records = [];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    recordsDao = ServiceLocator.get<RecordsDao>();
+
     _updateRecords();
   }
 
@@ -42,12 +44,12 @@ class _HomePageState extends State<HomePage> {
 
   void _addNewRecord() async {
     const record = RecordDto(mood: 'good', date: 1);
-    await widget.dao.insert(record);
+    await recordsDao.insert(record);
     _updateRecords();
   }
 
   Future<void> _updateRecords() async {
-    final records = await widget.dao.records();
+    final records = await recordsDao.records();
     setState(() {
       this.records = records;
     });
