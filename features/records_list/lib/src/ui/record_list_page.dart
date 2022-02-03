@@ -6,16 +6,16 @@ import 'package:storage/storage.dart';
 
 import 'records_list.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class RecordListPage extends StatefulWidget {
+  const RecordListPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<RecordListPage> createState() => _RecordListPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _RecordListPageState extends State<RecordListPage> {
   late GetRecordsUseCase getRecordsUseCase;
   late AddRecordUseCase addRecordUseCase;
 

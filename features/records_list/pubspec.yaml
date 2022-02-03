@@ -10,5 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  core:
+    path: ../../core
+  di:
+    path: ../../di
+  domain:
+    path: ../../domain
+
 dev_dependencies:
-  lints: ^1.0.0
+  flutter_lints: ^1.0.0

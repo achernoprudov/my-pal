@@ -20,6 +20,9 @@ dependencies:
   storage:
     path: ../storage
 
+  records_list:
+    path: ../features/records_list
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:

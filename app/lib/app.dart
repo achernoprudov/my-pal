@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:storage/storage.dart';
-
-import 'modules/home/home_page.dart';
+import 'package:records_list/records_list.dart';
 
 class App extends StatelessWidget {
-
   const App({Key? key}) : super(key: key);
 
   @override
@@ -14,7 +11,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const HomePage(),
+      home: const RecordListPage(),
     );
   }
 }
