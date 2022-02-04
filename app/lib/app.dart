@@ -1,5 +1,5 @@
+import 'package:feature_record_list/record_list.dart';
 import 'package:flutter/material.dart';
-import 'package:records_list/records_list.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -8,9 +8,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My pal',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
+      theme: ThemeData(primarySwatch: Colors.indigo),
       home: const RecordListPage(),
     );
   }
