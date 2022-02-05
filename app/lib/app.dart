@@ -1,4 +1,4 @@
-import 'package:feature_record_list/record_list.dart';
+import 'package:feature_home/home.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -9,7 +9,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'My pal',
       theme: ThemeData(primarySwatch: Colors.indigo),
-      home: const RecordListPage(),
+      home: const HomePage(),
     );
   }
 }

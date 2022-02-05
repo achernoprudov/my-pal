@@ -78,6 +78,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  feature_home:
+    dependency: "direct main"
+    description:
+      path: "../features/home"
+      relative: true
+    source: path
+    version: "0.0.1"
   feature_record_list:
     dependency: "direct main"
     description:

@@ -17,5 +17,8 @@ dependencies:
   domain:
     path: ../../domain
 
+  feature_record_list:
+    path: ../record_list
+
 dev_dependencies:
   flutter_lints: ^1.0.0

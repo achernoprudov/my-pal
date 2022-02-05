@@ -22,6 +22,8 @@ dependencies:
 
   feature_record_list:
     path: ../features/record_list
+  feature_home:
+    path: ../features/home
 
   cupertino_icons: ^1.0.2
 
