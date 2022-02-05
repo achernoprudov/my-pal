@@ -1,0 +1,9 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  
+  rules:
+    avoid_print: true  
+    always_require_non_null_named_parameters: true
+    always_use_package_imports: false
+    use_late_for_private_fields_and_variables: true

@@ -1,4 +1,5 @@
 import 'package:feature_record_list/record_list.dart';
+import 'package:feature_settings/feature_settings.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
             case 0:
               return const RecordListPage();
             case 2:
-              return Center(child: Text('Settings'));
+              return const SettingsPage();
           }
           throw Exception('Not implemented');
         },
@@ -32,7 +33,7 @@ class _HomePageState extends State<HomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.add),
             label: 'Add',
           ),
           BottomNavigationBarItem(

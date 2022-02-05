@@ -1,5 +1,5 @@
-name: feature_home
-description: Home module.
+name: feature_settings
+description: Settings module.
 version: 0.0.1
 publish_to: none
 
@@ -16,11 +16,6 @@ dependencies:
     path: ../../di
   domain:
     path: ../../domain
-
-  feature_record_list:
-    path: ../record_list
-  feature_settings:
-    path: ../settings
 
 dev_dependencies:
   flutter_lints: ^1.0.0

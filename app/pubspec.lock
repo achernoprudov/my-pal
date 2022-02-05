@@ -92,6 +92,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  feature_settings:
+    dependency: "direct main"
+    description:
+      path: "../features/settings"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
